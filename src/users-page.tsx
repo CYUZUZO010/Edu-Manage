@@ -4,7 +4,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Select } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
@@ -313,7 +312,7 @@ export default function UsersPage() {
                     </Badge>
                     <Button
                       variant="outline"
-                      className="border-slate-300 text-slate-700 hover:bg-slate-50 hover:border-slate-400"
+                      className="border-slate-300 text-slate-700 hover:bg-slate-50 hover:border-slate-400 cursor-pointer"
                       size="sm"
                     >
                       View Details

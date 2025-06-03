@@ -288,7 +288,7 @@ export default function AdminUsers() {
                     <Button
                       variant="outline"
                       size="sm"
-                      className="border-slate-300 text-slate-700 hover:bg-slate-50 hover:border-slate-400"
+                      className="border-slate-300 text-slate-700 hover:bg-slate-50 cursor-pointer hover:border-slate-400"
                     >
                       View Details
                     </Button>

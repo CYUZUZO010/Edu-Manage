@@ -62,7 +62,7 @@ export default function SignupPage() {
           password: "",
           role: "student",
         });
-        router.push("/"); // Redirect to login page
+        router.push("/login"); // Redirect to login page
       }, 2000);
     } catch (err) {
       setIsSubmitting(false);
@@ -147,10 +147,10 @@ export default function SignupPage() {
             </div>
 
             <div className="flex items-center space-x-4">
-              <Link href="/">
+              <Link href="/login">
                 <Button variant="ghost">
                   <ArrowLeft className="w-4 h-4 mr-2" />
-                  Back to Home
+                  Back to Login
                 </Button>
               </Link>
             </div>
@@ -278,7 +278,7 @@ export default function SignupPage() {
 
               <Button
                 type="submit"
-                className="w-full mt-6 bg-slate-800 hover:bg-slate-900 text-white py-3"
+                className="w-full mt-6 bg-slate-800 hover:bg-slate-700 cursor-pointer text-white py-3"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Creating Account..." : "Create Account"}

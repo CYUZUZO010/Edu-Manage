@@ -13,9 +13,9 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-import AdminUsers from "./admin-user";
-import Teacher from "./teacher";
-import Dashboard from "./student-page";
+import AdminUsers from "./admin/page";
+import Teacher from "./teacher/page";
+import Dashboard from "./student/page";
 
 type UserRole = "ADMIN" | "TEACHER" | "STUDENT" | null;
 
@@ -143,16 +143,19 @@ export default function HomePage() {
               </div>
 
               <div className="flex items-center space-x-4">
-                <Button
-                  variant="ghost"
-                  onClick={() => setShowLogin(true)}
-                  className="flex items-center space-x-2 bg-slate-600 hover:cursor-pointer"
-                >
-                  <LogIn className="w-4 h-4" />
-                  <span>Login</span>
-                </Button>
+                <Link href="./login">
+                  <Button
+                    //variant="ghost"
+                    //onClick={() => setShowLogin(true)}
+                    className="flex items-center space-x-2 bg-slate-500 hover:cursor-pointer hover:bg-slate-300"
+                  >
+                    <LogIn className="w-4 h-4" />
+                    <span>Login</span>
+                  </Button>
+                </Link>
+
                 <Link href="/signup">
-                  <Button className="flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700">
+                  <Button className="flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-400 cursor-pointer">
                     <UserPlus className="w-4 h-4" />
                     <span>Sign Up</span>
                   </Button>
@@ -226,14 +229,17 @@ export default function HomePage() {
             {/* Call to Action */}
             <div className="space-y-4">
               <div className="flex items-center justify-center space-x-4">
-                <Button
-                  size="lg"
-                  onClick={() => setShowLogin(true)}
-                  className="bg-slate-800 hover:bg-slate-900 text-white px-8 py-3"
-                >
-                  <LogIn className="w-5 h-5 mr-2" />
-                  Login to Your Account
-                </Button>
+                <Link href="./login">
+                  <Button
+                    size="lg"
+                    //onClick={() => setShowLogin(true)}
+                    className="bg-slate-800 hover:bg-slate-900 text-white px-8 py-3 hover:cursor-pointer"
+                  >
+                    <LogIn className="w-5 h-5 mr-2" />
+                    Login to Your Account
+                  </Button>
+                </Link>
+
                 <Link href="/signup">
                   <Button
                     size="lg"
@@ -274,8 +280,8 @@ export default function HomePage() {
 
             <div className="flex items-center space-x-4">
               <Button
-                className="cursor-pointer"
-                onClick={() => setShowLogin(false)}
+                className="bg-slate-400 hover:cursor-pointer"
+                //onClick={() => setShowLogin(false)}
               >
                 ← Back to Home
               </Button>
