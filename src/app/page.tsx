@@ -89,7 +89,7 @@ export default function HomePage() {
   // If user is logged in, show their dashboard
   if (currentUser) {
     return (
-      <div>
+      <div className="min-h-screen">
         <div className="bg-white border-b border-gray-200 px-8 py-4">
           <div className="max-w-6xl mx-auto flex items-center justify-between">
             <div className="flex items-center space-x-3">
@@ -128,11 +128,11 @@ export default function HomePage() {
   // Landing page with navigation
   if (!showLogin) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+      <div className="min-h-screen overflow-x-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
         {/* Navigation Bar */}
         <nav className="bg-white/80 backdrop-blur-sm border-b border-white/20 shadow-sm">
-          <div className="max-w-6xl mx-auto px-8 py-4">
-            <div className="flex items-center justify-between">
+          <div className="max-w-6xl mx-auto px-4 lg:px-6 py-4">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
               <div className="flex items-center space-x-2">
                 <div className="w-10 h-10 bg-gradient-to-br from-indigo-400 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">
                   SMS
@@ -166,41 +166,41 @@ export default function HomePage() {
         </nav>
 
         {/* Hero Section */}
-        <div className="flex items-center justify-center px-8 py-16">
-          <div className="max-w-4xl mx-auto text-center">
+        <div className="flex items-center justify-center px-4 sm:px-6 md:px-8 py-16">
+          <div className="max-w-4xl w-full text-center">
             <div className="mb-8">
-              <h1 className="text-5xl font-bold text-slate-800 mb-4">
+              <h1 className="text-3xl sm:text-xl font-bold text-slate-800 mb-4">
                 Welcome to School Management System
               </h1>
-              <p className="text-xl text-slate-600 mb-8">
+              <p className="text-base sm:text-xl text-slate-600 mb-8">
                 A comprehensive platform for students, teachers, and
                 administrators to manage academic activities efficiently.
               </p>
             </div>
 
             {/* Feature Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-              <Card className="bg-white/80 backdrop-blur-sm border border-white/30 hover:shadow-lg transition-all duration-300">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-3 mb-12 w-full max-w-5xl mx-auto px-4">
+              <Card className=" w-full bg-white/80 backdrop-blur-sm border border-white/30 hover:shadow-lg transition-all duration-300">
                 <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center text-white mx-auto mb-4">
-                    <GraduationCap className="w-8 h-8" />
+                  <div className="w-14 h-14 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center text-white mx-auto mb-4">
+                    <GraduationCap className="w-7 h-7" />
                   </div>
-                  <h3 className="text-xl font-semibold text-slate-800 mb-2">
+                  <h3 className="text-lg font-semibold text-slate-800 mb-2">
                     For Students
                   </h3>
                   <p className="text-slate-600">
                     Access course materials, download files, track progress, and
                     stay updated with assignments.
-                  </p>
+                   </p>
                 </CardContent>
               </Card>
 
-              <Card className="bg-white/80 backdrop-blur-sm border border-white/30 hover:shadow-lg transition-all duration-300">
+              <Card className=" w-full bg-white/80 backdrop-blur-sm border border-white/30 hover:shadow-lg transition-all duration-300">
                 <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white mx-auto mb-4">
-                    <UserCheck className="w-8 h-8" />
+                  <div className="w-14 h-14 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white mx-auto mb-4">
+                    <UserCheck className="w-7 h-7" />
                   </div>
-                  <h3 className="text-xl font-semibold text-slate-800 mb-2">
+                  <h3 className="text-lg font-semibold text-slate-800 mb-2">
                     For Teachers
                   </h3>
                   <p className="text-slate-600">
@@ -210,12 +210,12 @@ export default function HomePage() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-white/80 backdrop-blur-sm border border-white/30 hover:shadow-lg transition-all duration-300">
+              <Card className=" w-full bg-white/80 backdrop-blur-sm border border-white/30 hover:shadow-lg transition-all duration-300">
                 <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center text-white mx-auto mb-4">
-                    <Shield className="w-8 h-8" />
+                  <div className="w-14 h-14 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center text-white mx-auto mb-4">
+                    <Shield className="w-7 h-7" />
                   </div>
-                  <h3 className="text-xl font-semibold text-slate-800 mb-2">
+                  <h3 className="text-lg font-semibold text-slate-800 mb-2">
                     For Admins
                   </h3>
                   <p className="text-slate-600">
@@ -228,7 +228,7 @@ export default function HomePage() {
 
             {/* Call to Action */}
             <div className="space-y-4">
-              <div className="flex items-center justify-center space-x-4">
+              <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
                 <Link href="./login">
                   <Button
                     size="lg"
@@ -280,7 +280,7 @@ export default function HomePage() {
 
             <div className="flex items-center space-x-4">
               <Button
-                className="bg-slate-400 hover:cursor-pointer"
+                className="bg-slate-800 hover:cursor-pointer"
                 //onClick={() => setShowLogin(false)}
               >
                 ← Back to Home

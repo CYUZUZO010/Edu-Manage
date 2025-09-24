@@ -50,7 +50,7 @@ export default function StudentDashboard() {
       code: "MATH101",
       teacher: "Dr. HIRWA Ian",
       color: "bg-blue-500",
-      progress: 75,
+      progress: 60,
       files: [],
     },
     {
@@ -150,26 +150,58 @@ export default function StudentDashboard() {
   const handleDownload = async (file: CourseFile) => {
     if (file.url) {
       try {
-        // Open the file in a new tab for download
-        window.open(file.url, "_blank");
-        toast({
-          title: "Download Started",
-          description: `Downloading ${file.name}`,
-        });
+        //check if it is a phone
+
+        const isMobile =
+          /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent
+          );
+        if (isMobile) {
+          // Open the file in a new tab for download
+          window.open(file.url, "_blank");
+          const link = document.createElement("a");
+          link.href = file.url;
+          link.download = file.name; //This forces the downlaod
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+
+          //add to DOM temporarily
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+
+          setTimeout(() => {
+            window.open(file.url, "_blank", "noopener, noreferrer");
+          }, 100);
+
+          toast({
+            title: "File Opened & Downloaded",
+            description: `${file.name} check your Downloads folder or Files app`,
+          });
+        } else {
+          window.open(file.url, "_blank");
+          const link = document.createElement("a");
+          link.href = file.url;
+          link.download = file.name;
+          link.target = "_blank";
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+
+          toast({
+            title: "File Opened & Downloaded",
+            description: `${file.name} opened in new tab and downloaded!`,
+            variant: "destructive",
+          });
+        }
       } catch (error) {
         console.error("Download error:", error);
         toast({
-          title: "Download Failed",
+          title: "Action Failed",
           description: "There was an error downloading the file.",
           variant: "destructive",
         });
       }
-    } else {
-      toast({
-        title: "File Not Available",
-        description: "This file is not available for download.",
-        variant: "destructive",
-      });
     }
   };
 
@@ -368,7 +400,10 @@ export default function StudentDashboard() {
                         </div>
                       </div>
 
-                      <Button className="w-full mt-4" variant="outline">
+                      <Button
+                        className="w-full mt-4 hover:bg-slate-400 cursor-pointer"
+                        variant="outline"
+                      >
                         View Materials
                       </Button>
                     </CardContent>
@@ -377,7 +412,7 @@ export default function StudentDashboard() {
               </div>
             </>
           ) : (
-            <div>
+            <div className="min-h-screen max-w-6xl md:p-8">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-4">
                   <Button
@@ -473,7 +508,6 @@ export default function StudentDashboard() {
                               size="sm"
                               className="bg-blue-600 hover:bg-blue-700 cursor-pointer"
                               onClick={() => handleDownload(file)}
-                              
                             >
                               <Download className="w-4 h-4 mr-2" />
                               Download

@@ -1,6 +1,5 @@
 generator client {
   provider = "prisma-client-js"
-  
 }
 
 datasource db {
@@ -8,17 +7,37 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 model User {
-  id       Int     @id @default(autoincrement())
+  id       Int      @id @default(autoincrement())
   name     String
-  email    String? @unique
+  email    String?  @unique
   password String?
-  role     String  @default("student")
+  role     String   @default("student")
   createAt DateTime @default(now())
 
-  @@map("users)
+  //files File[]
+
+  @@map("users")
 }
+
+/**
+ * model File {
+ * id         String   @id
+ * name       String
+ * type       String
+ * size       String
+ * uploadDate String
+ * category   String
+ * url        String
+ * subjectId  String
+ * teacherId  String
+ * uploadedAt DateTime
+ * User       User?    @relation(fields: [userId], references: [id])
+ * userId     Int?
+ * @@map("files")
+ * }
+ */
+
 enum Role {
   STUDENT
   TEACHER

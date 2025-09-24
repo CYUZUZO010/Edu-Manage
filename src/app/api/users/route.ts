@@ -9,10 +9,10 @@ export async function GET() {
         name: true,
         email: true,
         role: true,
-        createAt: true,
+    
       },
       orderBy: {
-        createAt: "desc",
+      
       },
     });
     return NextResponse.json({ users }, { status: 200 });

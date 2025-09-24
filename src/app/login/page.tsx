@@ -92,7 +92,7 @@ export default function LoginPage() {
 
             <div className="flex items-center space-x-4">
               <Link href="/">
-                <Button variant="ghost">
+                <Button className="bg-slate-300 hover:bg-slate-400 cursor-pointer">
                   <ArrowLeft className="w-4 h-4 mr-2" />
                   Back to Home
                 </Button>
