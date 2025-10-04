@@ -14,6 +14,7 @@ import {
   Shield,
   User,
 } from "lucide-react";
+//added new functionalities !
 
 interface User {
   id: string;
