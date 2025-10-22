@@ -34,6 +34,8 @@ export default function ClientLayout({ children }: { children: ReactNode }) {
         </nav>
         <main>{children}</main>
 
+        {/*The footer is here.*/}
+
         <footer className="bg-blue-600 text-white p-4 mt-8">
           <div className="container mx-auto text-center">
             <p>&copy; {year ?? "----"} My App. All rights reserved</p>
