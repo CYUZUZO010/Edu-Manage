@@ -110,7 +110,7 @@ export default function LoginPage() {
               <LogIn className="w-6 h-6" />
             </div>
             <CardTitle className="text-2xl font-bold text-slate-800">
-              Welcome Back
+              Welcome Back!
             </CardTitle>
             <p className="text-slate-600">Sign in to your account</p>
           </CardHeader>
