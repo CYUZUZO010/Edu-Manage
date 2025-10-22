@@ -258,7 +258,7 @@ export default function TeacherDashboard() {
                 Upload Course Materials
               </h2>
               <p className="text-slate-600 text-sm">
-                Manage and upload files for your subjects
+                Manage and upload files for your subjects here
               </p>
             </div>
 
