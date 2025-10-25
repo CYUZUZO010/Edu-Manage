@@ -52,6 +52,7 @@ export class FileStorage {
     }
     return false
   }
+  //keeping the uploaded files by the teacher.
 
   static getFilesByTeacher(teacherId: string): FileRecord[] {
     return this.getAllFiles().filter((file) => file.teacherId === teacherId)
