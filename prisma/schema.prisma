@@ -6,6 +6,7 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+/**The url of the database of the postgres*/
 
 model User {
   id       Int      @id @default(autoincrement())
@@ -43,3 +44,4 @@ enum Role {
   TEACHER
   ADMIN
 }
+/*The roles that are in the whole system*/
