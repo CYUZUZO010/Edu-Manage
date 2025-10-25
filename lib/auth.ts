@@ -2,6 +2,7 @@ import { jwtVerify } from "jose"
 import { cookies } from "next/headers"
 
 const secret = new TextEncoder().encode(process.env.JWT_SECRET || "your-secret-key")
+//this auth.js is for managing the authorization in the system roles
 
 export async function verifyAuth() {
   try {
@@ -16,6 +17,7 @@ export async function verifyAuth() {
     return payload
   } catch (error) {
     console.error("Auth verification error:", error)
+    //error in authorization
     return null
   }
 }
