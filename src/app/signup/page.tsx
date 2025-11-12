@@ -33,7 +33,7 @@ export default function SignupPage() {
     setError(null);
 
     try {
-      // Send data to your API endpoint
+    
       const response = await fetch("/api/register", {
         method: "POST",
         headers: {
