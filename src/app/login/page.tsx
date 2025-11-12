@@ -15,7 +15,7 @@ export default function LoginPage() {
     name: "", // Added name field
     email: "",
     password: "",
-    role: "student", // Added role field with default
+    role: "student", 
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
