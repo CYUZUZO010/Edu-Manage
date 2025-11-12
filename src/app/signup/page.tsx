@@ -21,7 +21,7 @@ export default function SignupPage() {
     name: "",
     email: "",
     password: "",
-    role: "student", // Default role
+    role: "student", 
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -53,7 +53,7 @@ export default function SignupPage() {
       setIsSubmitting(false);
       setIsSuccess(true);
 
-      // Reset form and redirect after success
+      
       setTimeout(() => {
         setIsSuccess(false);
         setFormData({
