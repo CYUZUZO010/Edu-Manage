@@ -62,7 +62,7 @@ export default function SignupPage() {
           password: "",
           role: "student",
         });
-        router.push("/login"); // Redirect to login page
+        router.push("/login"); 
       }, 2000);
     } catch (err) {
       setIsSubmitting(false);
