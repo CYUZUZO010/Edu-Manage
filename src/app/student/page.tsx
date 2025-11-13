@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { toast } from "@/src/components/ui/user-toast";
-import { useRouter } from "next/navigation"; // ✅ Correct import for App Router
+import { useRouter } from "next/navigation"; 
 import { LogOut } from "lucide-react";
 import {
   BookOpen,
