@@ -12,7 +12,7 @@ import { LogIn, ArrowLeft, AlertCircle } from "lucide-react";
 export default function LoginPage() {
   const router = useRouter();
   const [formData, setFormData] = useState({
-    name: "", // Added name field
+    name: "", 
     email: "",
     password: "",
     role: "student", 
@@ -51,7 +51,7 @@ export default function LoginPage() {
         throw new Error(data.error || "Failed to login");
       }
 
-      // Redirect based on user role
+      
       const { user } = data;
       switch (user.role) {
         case "admin":
