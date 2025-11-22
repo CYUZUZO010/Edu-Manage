@@ -194,10 +194,10 @@ export default function TeacherDashboard() {
         </div>
       </header>
 
-      {/* Main Content */}
+    
       <main className="p-4 sm:p-6">
         <div className="max-w-6xl mx-auto space-y-8">
-          {/* Welcome Message */}
+          
           <div className="text-center">
             <h1 className="text-2xl sm:text-3xl font-bold text-slate-800">
               Welcome Back!
@@ -251,7 +251,7 @@ export default function TeacherDashboard() {
             </Card>
           </div>
 
-          {/* Upload Section */}
+          
           <div className="space-y-4">
             <div>
               <h2 className="text-xl sm:text-2xl font-semibold text-slate-800">
